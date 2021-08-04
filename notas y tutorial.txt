@@ -27,4 +27,6 @@ SECRET_KEY_JWT=SecretKey210804
 21- Luego ejecutamos la funcion que esta guardada en el modulo, que en este caso es dbConnection
 22- Probamos el server en la consola con npm start y ahi sirvio perchisimo ;)
 
-Para cerrar el servidor lo hacemos con ctrl + c
+Para cerrar el servidor lo hacemos con ctrl + c y recomendable cerrar el mongo tambien
+
+Luego subimos al repo de github y percho
