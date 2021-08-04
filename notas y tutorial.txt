@@ -1,0 +1,30 @@
+iniciar servidor con las carpetas de backend y frontend creadas, primero el back:
+
+1- npm init
+2- npm i express mongoose cors jsonwebtoken bcrypt moment connect-multiparty --save
+3- npm nodemon --save-dev
+4- "scripts": {
+        "start": "nodemon index.js"
+    }
+5- crear index.js que es el corazon del proyecto
+6- crear .env para configurar las variables de entorno
+7- npm i dotenv --save
+8- Recomendable aca abrir el mongod y el mongo para sacar el link de BD_CONNECTION que se use en el .env (mongodb://127.0.0.1:27017/) aunque se recomiendo dejar el localhost por seguridad
+9- PORT=3001
+BD_CONNECTION=mongodb://localhost:27017/dbfelipescrumboard
+SECRET_KEY_JWT=SecretKey210804
+10- se crea la carpeta db con el db.js dentro
+11- se llama la libreria mongoose con const mongoose = require("mongoose");
+12- se crea la funcion flecha asincrona para que se conecte a MongoDB con un try cath, de tal manera que si se conecta nos tire un mensaje percho y si no, uno malo
+13- Hay que volver la funcion de db.js un modulo, entonces se hace con el module.exports = { dbConnection };
+14- luego vamos al index.js que es el servidor y llamamos las librerias de express y la de cors por medio de los require
+15- Luego vamos a llamar al modulo que creamos y lo traemos de la ruta donde lo creamos (./db/db)
+16- Luego vamos a llamar a la configuracion de la libreria dotenv
+17- luego creamos nuestro server por una constante llamada app que llame a la libreria de express(); const app = express();
+18- configuramos el servidor para que quede en formato JSON por medio de app.use(express.json()); 
+19- Luego configuramos para que tambien use el cors app.use(cors());
+20- Luego el server va a funcionar por medio de un puerto, es el que configuramos en el .env y lo llamamos por medio de app.listen(process.env.PORT, () => console.log("Backend server running on port " + process.env.PORT));
+21- Luego ejecutamos la funcion que esta guardada en el modulo, que en este caso es dbConnection
+22- Probamos el server en la consola con npm start y ahi sirvio perchisimo ;)
+
+Para cerrar el servidor lo hacemos con ctrl + c
