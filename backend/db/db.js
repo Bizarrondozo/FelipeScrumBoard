@@ -8,10 +8,10 @@ const dbConnection = async() => {
             useCreateIndex: true,
             useUnifiedTopology: true,
         });
-        console.log("Connection with MongoDB: Succesful and beauty");
+        console.log("Connection with MongoDB: Succesful");
     } catch (e) {
-        console.log("Connection with MongoDB failed: ", e);
-        throw new Error("Connection with MongoDB failed");
+        console.log("Connection with MongoDB: ", e);
+        throw new Error("Connection with Mongo");
     }
 };
 
