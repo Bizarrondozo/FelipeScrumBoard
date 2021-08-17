@@ -22,8 +22,9 @@ const registerRole = async(req, res) => {
 };
 
 const listRole = async(req, res) => {
-    const role = await Role.find();
-    if (!role || role.lenght === 0) return res.status(401).send("No role found");
+    const role = await Role.find()
+    if (!role || role.lenght === 0)
+        return res.status(401).send("No role found");
     return res.status(200).send({ role });
 };
 
